@@ -1,11 +1,12 @@
 return {
-    "EdenEast/nightfox.nvim",
-    name = "nightfox",
-    priority = 1000,
-    config = function()
-        require("nightfox").load()
-        vim.cmd([[colorscheme nightfox]])
-    end,
+    { "tanvirtin/monokai.nvim" },
+    -- "EdenEast/nightfox.nvim",
+    -- name = "nightfox",
+    -- priority = 1000,
+    -- config = function()
+    --     require("nightfox").load()
+    --     vim.cmd([[colorscheme nightfox]])
+    -- end,
 }
 -- "folke/tokyonight.nvim",
 -- name = "tokyonight",
@@ -15,4 +16,3 @@ return {
 -- config = function ()
 --     vim.cmd[[colorscheme tokyonight]]
 -- end
-

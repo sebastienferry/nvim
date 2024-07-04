@@ -1,4 +1,2 @@
---require("mario.default")
---require("mario.lazy")
--- require("seby.core")
-require("seby.lazy")
+require("dev.config.lazy")
+require("dev.config.keymaps")

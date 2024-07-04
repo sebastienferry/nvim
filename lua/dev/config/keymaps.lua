@@ -1,0 +1,1 @@
+--vim.keymap.seh("n", "ss", ":split<CR><C-w>w") -- Open a horizontal split.
