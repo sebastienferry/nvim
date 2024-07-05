@@ -70,7 +70,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 require("lazy").setup({
     spec = {
         -- import your plugins
-        { import = "dev.plugins" },
+        { import = "go.plugins" },
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
