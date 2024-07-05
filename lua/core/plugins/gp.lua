@@ -1,6 +1,7 @@
 -- lazy.nvim
 return {
     "robitx/gp.nvim",
+    enabled = false,
     config = function()
         require("gp").setup({
             -- your configuration comes here
