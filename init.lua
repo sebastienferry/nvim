@@ -1,2 +1,2 @@
-require("dev.config.lazy")
-require("dev.config.keymaps")
+require("go.config.lazy")
+require("go.config.keymaps")
