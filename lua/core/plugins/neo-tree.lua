@@ -27,7 +27,7 @@ local neotree = {
         },
     },
     keys = {
-        { "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+        { "<leader>nt", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
     },
     init = function()
         -- FIX: use `autocmd` for lazy-loading neo-tree instead of directly requiring it,

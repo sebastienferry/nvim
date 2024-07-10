@@ -1,6 +1,7 @@
 return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
+    enable = false,
     event = "InsertEnter",
     config = function()
         require("copilot").setup({
@@ -48,4 +49,4 @@ return {
             server_opts_overrides = {},
         })
     end,
-}
+

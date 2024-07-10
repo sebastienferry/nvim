@@ -1,6 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
+    lazy = false,
     dependencies = {
         "nvim-lua/plenary.nvim",
         {
@@ -23,7 +24,27 @@ return {
                 layout_strategy = "horizontal",
                 layout_config = { prompt_position = "top" },
             },
+            pickers = {
+                find_files = {
+                    hidden = true,
+                },
+            },
+            extensions = {
+                file_browser = {
+                    path_display = { "shorten" },
+                    hidden = true,
+                    prompt_title = "File Browser",
+                    cwd = vim.fn.getcwd(),
+                },
+                fzf = {
+                    override_generic_sorter = true,
+                    override_file_sorter = true,
+                    case_mode = "smart_case",
+                    hidden = true,
+                },
+            },
         })
+
         telescope.load_extension("fzf")
         telescope.load_extension("file_browser")
         --         extensions = {
@@ -41,6 +62,7 @@ return {
         --     })
         --
         --
+
         local builtin = require("telescope.builtin")
         local map = vim.keymap.set
         local opts = { noremap = true, silent = true }
@@ -50,5 +72,13 @@ return {
         map("n", "<leader>fg", builtin.live_grep, opts)
         map("n", "<leader>fx", builtin.treesitter, opts) -- Lists tree-sitter symbols
         map("n", "<leader>fs", builtin.spell_suggest, opts) -- Lists spell options
+        map("n", "<leader>fr", "<cmd>Telecope lsp_references<cr>", opts) -- Lists lsp references
+        map("n", "<leader>fd", "<cmd>Telescope lsp_definitions<cr>", opts) -- Lists lsp definitions
+        map("n", "<leader>fi", "<cmd>Telescope lsp_implementations<cr>", opts) -- Lists lsp implementations
+        map("n", "<leader>ft", "<cmd>Telescope lsp_type_definitions<cr>", opts) -- Lists lsp type definitions
+        map("n", "<leader>fc", "<cmd>Telescope lsp_code_actions<cr>", opts) -- Lists lsp code actions
+        map("n", "<leader>fq", "<cmd>Telescope lsp_document_diagnostics<cr>", opts) -- Lists lsp document diagnostics
+        map("n", "<leader>fu", "<cmd>Telescope lsp_incoming_calls<cr>", opts)
+        map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
     end,
 }

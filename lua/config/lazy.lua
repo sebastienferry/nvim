@@ -17,6 +17,9 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ml", "<cmd>Lazy<cr>")
 
+vim.keymap.set("v", "<leader>y", "<cmd>w! /tmp/vitmp<cr>")
+vim.keymap.set("n", "<leader>p", "<cmd>r! cat /tmp/vitmp<cr>")
+
 require("lazy").setup("core.plugins", {
     -- defaults = { lazy = true },
     install = {
@@ -111,13 +114,13 @@ require("lazy").setup("core.plugins", {
 --     checker = { enabled = false },
 -- })
 
--- -- Sets the colorscheme to be used
--- local theme = "catppuccin"
--- local is_ok, _ = pcall(vim.cmd, "colorscheme " .. theme)
--- if not is_ok then
---     vim.notify("colorscheme " .. theme .. " not found!")
---     return
--- end
+-- Sets the colorscheme to be used
+local theme = "onedark"
+local is_ok, _ = pcall(vim.cmd, "colorscheme " .. theme)
+if not is_ok then
+    vim.notify("colorscheme " .. theme .. " not found!")
+    return
+end
 
 -- -- conform autoformat
 -- -- vim.api.nvim_create_autocmd("BufWritePre", {
