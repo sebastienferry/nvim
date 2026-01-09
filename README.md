@@ -1,5 +1,7 @@
 # Neovim Configuration
 
+This setup is based on https://www.vineeth.io/posts/neovim-setup
+
 ## Installed Plugins
 
 ### File Navigation & Search
